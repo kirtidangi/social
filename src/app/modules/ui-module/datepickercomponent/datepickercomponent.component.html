@@ -1,0 +1,11 @@
+<div [formGroup]="groupInstance">
+  <div class="input-group">
+    
+    <input class="form-control"  placeholder="{{ placeholder }}" (click)="d.toggle()" 
+    [attr.disabled]="disableDate ? '' : null"
+        ngbDatepicker  formControlName="{{controlName}}"
+        #d="ngbDatepicker"
+      />
+     
+</div>
+</div>

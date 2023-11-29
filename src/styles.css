@@ -1,0 +1,48 @@
+*{ font-family: 'Poppins', sans-serif !important;}
+
+body{margin: 0px; padding: 0px; font-family: 'Poppins', sans-serif !important;}
+
+a{text-decoration: none;}
+
+
+.toast-error {
+    background-color: #fc5050 !important;
+    margin: 0px auto;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 22px;
+    margin: 10px auto 0px;
+    width: 400px;
+    max-width: 100%;
+}
+
+.toast-container{width: 100%;position: fixed;}
+  
+  .toast-success{background-color: #88c143 !important;
+    margin: 0px auto;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 22px;
+    margin: 10px auto 0px;
+    width: 400px;
+    max-width: 100%;}
+  
+  .toast-info{background-color: #2386bf !important;    margin: 0px auto;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 22px;
+    margin: 10px auto 0px;
+    width: 400px;
+    max-width: 100%;}
+  
+  .toast-warning{background-color:#efb719 !important;    margin: 0px auto;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 22px;
+    margin: 10px auto 0px;
+    width: 400px;
+    max-width: 100%;}

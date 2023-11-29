@@ -1,0 +1,69 @@
+<app-header></app-header>
+
+
+<div class="banner-dv w-100 float-start">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="row">
+            <div class="col-md-6">
+                <div class="bannerimage w-100 float-start">
+                  <img src="{{images}}" alt="">
+                </div><!--bannerimage-->
+              </div><!--col-6-->
+  
+              <div class="col-md-6">
+                <div class="bannerright w-100 float-start text-center">
+                  <div class="w-100 float-start">
+                    <h1>{{title}}</h1>
+                    <app-buttoncomponent (clickEmitter)="register()" [value]="exploringbutton" [className]="'explore-btn'"></app-buttoncomponent>
+                    <app-buttoncomponent (clickEmitter)="login()" [value]="accountbutton" [className]="'accnt-btn'"></app-buttoncomponent>
+                  </div>
+                </div><!--bannerright-->
+              </div><!--col-6-->
+          </div><!--row-->
+        </div>
+      </div><!--row-->
+    </div><!--container-->
+  </div><!--banner-dv-->
+  
+  <div class="w-100 float-start">
+  <div class="{{home.divClass1}}"  *ngFor="let home of homeData">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="homedv w-100 float-start">
+              <div class="row">
+                <div *ngIf="home.showFirst" class="col-md-6">
+                  <div class="home-text w-100 wow slideInLeft  float-start text-center"   style="animation-duration: 3s;">
+                    <div class="w-100 float-start">
+                      <h2> {{home.title}}</h2>
+                      <p>{{home.descriptions}} </p>
+                    </div>
+                  </div><!--home-text-->
+                </div><!--col-6-->
+  
+                <div class="col-md-6">
+                  <div class="home-image wow slideInRight w-100 float-start"  style="animation-duration: 3s;">
+                    <img src="{{home.image}}" alt="">
+                  </div><!--home-image-->
+                </div><!--col-6-->
+
+                <div *ngIf="!home.showFirst" class="col-md-6 d-none d-md-block">
+                  <div class="home-text w-100 wow slideInLeft  float-start text-center"   style="animation-duration: 3s;">
+                    <div class="w-100 float-start">
+                      <h2> {{home.title}}</h2>
+                      <p>{{home.descriptions}} </p>
+                    </div>
+                  </div><!--home-text-->
+                </div><!--col-6-->
+              </div><!--row-->
+            </div><!--homedv-->
+          </div><!--col-10-->
+      </div><!--row-->
+    </div><!--container-->
+  </div><!--home-section-->  
+
+  </div>
+
+<app-footer></app-footer>

@@ -1,0 +1,94 @@
+<div class="sign-top-btn w-100 float-start">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a routerLink="/register">Sign Up</a>
+      </div>
+      <!--col-12-->
+    </div>
+    <!--row-->
+  </div>
+  <!--container-->
+</div>
+<!--sign-top-btn-->
+
+<div class="signup-main w-100 float-start">
+  <div class="w-100 float-start">
+    <div class="signsect w-100 float-start">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 offset-md-4">
+            <div class="signform text-center w-100 float-start">
+              <h3>{{ title }}</h3>
+
+              <div class="signinputs w-100 float-start">
+                <app-inputcomponent
+                  [placeholder]="'Email or username'"
+                  [controlName]="'email'"
+                  [groupInstance]="loginForm"
+                  [type]="'email'"
+                ></app-inputcomponent>
+              </div>
+              <!--signinputs-->
+
+              <div class="signinputs w-100 float-start">
+                <app-inputcomponent
+                  [placeholder]="'Password'"
+                  [controlName]="'password'"
+                  [groupInstance]="loginForm"
+                  [type]="'password'"
+                ></app-inputcomponent>
+              </div>
+              <!--signinputs-->
+
+              <div class="singnbt w-100 float-start">
+                <app-buttoncomponent  (clickEmitter)="onLogin()"  [className]="isFormValid() ? 'disablebtn' : ''" 
+                  [value]="loginbutton"></app-buttoncomponent>
+              </div>
+
+              <div class="ortext w-100 float-start">
+                <div class="orline"></div>
+                <!--orline-->
+                <div class="orcont">OR</div>
+                <!--orcont-->
+                <div class="orline"></div>
+                <!--orline-->
+              </div>
+              <!--ortext-->
+
+              <div class="sign-social w-100 float-start">
+                <button>
+                  <fa-icon [icon]="facebookicon"></fa-icon>
+                  <span>Facebook</span>
+                </button>
+
+                <button>
+                  <fa-icon [icon]="googleicon"></fa-icon>
+                  <span>Google</span>
+                </button>
+              </div>
+              <!--sign-social-->
+
+              <div class="privacy-text w-100 float-start text-center">
+                <p>
+                  By signing in to Explore Social Play, you agree to our Terms
+                  and Privacy Policy.
+                </p>
+                <p>
+                  This site is protected by reCAPTCHA Enterprise and the
+                  <br />Google Privacy Policy and Terms of Service apply.
+                </p>
+              </div>
+            </div>
+            <!--signform-->
+          </div>
+          <!--col-6-->
+        </div>
+        <!--row-->
+      </div>
+      <!--container-->
+    </div>
+    <!--signsect-->
+  </div>
+</div>
+<!--signup-main-->

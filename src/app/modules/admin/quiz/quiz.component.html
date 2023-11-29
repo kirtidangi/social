@@ -1,0 +1,83 @@
+
+<section class="dashboard-dv w-100 float-start">
+   
+    <div class="answer-dv w-100 float-start">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <div class="anser-prgrss w-100 float-start">
+                <div class="close-answser">
+                  <fa-icon [icon]="crossicon"></fa-icon>
+                </div>
+                <div class="progress-answer w-100 float-start">
+                     
+                      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+
+                </div><!--progress-answer-->
+    
+                <div class="answer-heart">
+                  <fa-icon [icon]="hearticon" class="heart"></fa-icon>
+                  <span>5</span>
+                </div>
+              </div><!--anser-prgrss-->
+    
+             <div class="matchquestions w-100 float-start">
+               <div class="row">
+                 <div class="col-md-8 offset-md-2">
+                    <div class="usersobject w-100 float-start"  *ngFor="let quiz of quizlist">
+                          <div class="row">
+                            <div class="col-md-7">
+                              <div class="userobjectimage w-100 float-start">
+                                <img src="{{quiz.image}}" alt="">
+                              </div><!--userobjectimage-->
+                            </div><!--col-8-->
+                            <div class="col-md-5">
+                              <div class="userquestions w-100 float-start">
+                                <div class="w-100 float-start">
+                                  <ul>
+                                    <li><a href="#" *ngFor="let listing of quiz.objectives">{{listing}}</a></li>
+                                  </ul>
+                                </div>
+                              </div><!--userquestions-->
+                            </div><!--col-4-->
+                          </div><!--row-->                  
+                    </div><!--usersobject-->              
+                 </div><!--col-8-->
+               </div><!--row-->
+             </div><!--matchquestions-->
+    
+    
+              <div class="feedback-sect w-100 float-start">
+                <div class="feedback-heading w-100 float-start">
+                  <h3>Answer feedback</h3>
+                </div><!--feedback-heading-->
+    
+                <div class="feedback-answer w-100 float-start">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="left-feedback w-100 float-start">
+                        <div class="check">
+                            <img src="assets/images/check.png" >
+                        </div>
+                       
+                        <div class="textjbs">
+                          <h5>Great job!</h5>
+                          <a href="#"><fa-icon [icon]="flagiocn"></fa-icon> Report</a>
+                        </div>
+                      </div><!--left-feedback-->
+                    </div><!--col-4-->
+                    <div class="col-md-6">
+                      <div class="right-feedback w-100 float-start">
+                        <app-buttoncomponent  [value]="continuebutton"></app-buttoncomponent>
+                      </div><!--right-feedback-->
+                    </div><!--col-8-->
+                  </div><!--row-->
+                </div><!--feedback-answer-->
+              </div><!--feedback-sect-->
+    
+            </div><!--col-12-->
+          </div><!--row-->  
+      </div><!--container-->
+    </div><!--anser-dv-->
+    
+    </section>

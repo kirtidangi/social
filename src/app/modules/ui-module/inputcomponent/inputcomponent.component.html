@@ -1,0 +1,15 @@
+<div [formGroup]="groupInstance">
+	<input type="{{ type }}" class="{{className}}" placeholder="{{ placeholder }}" [maxlength]="maxLength" formControlName="{{controlName}}" (blur)="inputBlur()" (change)="inputChange()" [attr.disabled]="disableInput ? '' : null"
+	[ngClass]="{ 'is-invalid': (groupInstance.get(controlName)?.errors && groupInstance.get(controlName)?.touched) || (groupInstance.get(controlName)?.errors && groupInstance.get(controlName)?.dirty) }">
+	<div *ngIf="(groupInstance.get(controlName)?.errors && groupInstance.get(controlName)?.touched) || (groupInstance.get(controlName)?.errors && groupInstance.get(controlName)?.dirty)" class="invalid-feedback">
+	<div *ngIf="groupInstance.get(controlName)?.errors?.['required']">Field is required</div>
+	<div *ngIf="type === 'email' && groupInstance.get(controlName)?.errors?.['email']">Must be a valid email address</div>
+	<div *ngIf="groupInstance.get(controlName)?.errors?.['maxlength']">enter {{maxLength}} digits</div>
+	<div *ngIf="groupInstance.get(controlName)?.errors?.['minlength']">enter {{maxLength}} digits</div>
+	<div *ngIf="groupInstance.get(controlName)?.errors?.['max']">enter Value less than or equal {{ maxValue }}</div>
+	<div *ngIf="groupInstance.get(controlName)?.errors?.['min']">enter Value grater than or equal {{ minValue }}</div>
+	<div *ngIf="groupInstance.get(controlName)?.errors?.['pattern']">{{ patternError }}</div>	
+	
+</div>
+	
+</div>

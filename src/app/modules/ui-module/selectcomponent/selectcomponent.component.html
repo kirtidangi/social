@@ -1,0 +1,10 @@
+<div [formGroup]="groupInstance" *ngIf="options"><br>
+	<select  formControlName="{{controlName}}" (change)="changeEmitter()" [attr.disabled]="disableSelect ? '' : null">
+		<option *ngIf="selectOption" value="">Select</option>
+		<option *ngIf="allOption" value="">All</option>
+		<option *ngFor="let option of options" [value]="option.id">
+			{{option.title ? option.title : option.value}}
+		</option>
+	</select><br><br>
+	
+</div>

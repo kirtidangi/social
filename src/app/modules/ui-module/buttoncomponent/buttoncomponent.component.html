@@ -1,0 +1,9 @@
+
+<div>
+	<button class="{{className}}" (click)="onClickButton()" [disabled]="disableButton">
+		<span *ngIf="showIcon"><i class="fa fa-plus"></i></span>	
+		<span *ngIf="playIcon"><i class="fa fa-play-circle"></i></span>
+		<span *ngIf="pauseIcon"><i class="fa fa-stop-circle"></i></span>
+		{{ value }}
+	</button>	
+</div>

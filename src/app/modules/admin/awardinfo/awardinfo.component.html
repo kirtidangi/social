@@ -1,0 +1,169 @@
+<div class="explore-data w-100 float-start">
+    <div class="explore-heading w-100 float-start">
+      <h3>{{title}}</h3> 
+    </div><!--explore-heading-->
+
+    <div class="main-award w-100 float-start">
+      <div class="award-table w-100 float-start">
+        <table mat-table [dataSource]="dataSource">
+
+          <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef> Username </th>
+            <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="achievements">
+            <th mat-header-cell *matHeaderCellDef> Achievements </th>
+            <td mat-cell *matCellDef="let element"> {{element.achievements}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="streak">
+            <th mat-header-cell *matHeaderCellDef> Streak </th>
+            <td mat-cell *matCellDef="let element"> {{element.streak}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="treasures">
+            <th mat-header-cell *matHeaderCellDef> Treasures </th>
+            <td mat-cell *matCellDef="let element"> {{element.treasures}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="discoveries">
+            <th mat-header-cell *matHeaderCellDef> Discoveries </th>
+            <td mat-cell *matCellDef="let element"> {{element.discoveries}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef> Total </th>
+            <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+
+      </div><!--award-table-->
+
+      <div class="award-list w-100 float-start">
+        <div class="award-bxes w-100 float-start">
+          <div class="award-tilte w-100 float-start">
+            <h3>Achievements</h3>
+            
+          </div><!--award-title-->
+
+          <div class="award-listing  w-100 float-start">
+            <div class="quts-list w-100 float-start"  *ngFor="let acheive of achivementData">
+              <div class="level-icns d-inline-block position-relative">
+                <div class="level-img w-100 float-start position-relative">
+                  <img src="assets/images/level.png" alt="">
+                </div><!--level-img-->
+                <div class="level-text w-100 float-start">
+                  <p>{{acheive.level}}</p>
+                </div><!--level-text-->
+              </div><!--level-icns-->
+
+              <div class="quts-info w-100 float-start">
+                <div class="quts-info-title w-100 float-start">
+                  <h4>{{acheive.title}}</h4>
+                  <p>{{acheive.ranking}}</p> 
+                </div><!--quts-info-title-->
+
+
+                <div class="progressbar w-100 float-start">
+                  <div class="progress position-relative">
+                    <div class="progress-done" data-done="45" style="opacity: 1; width: 0%;"></div>
+                  </div>
+                  <div class="title-prgs w-100 float-start">
+                    <p>{{acheive.earn}}</p>
+                  </div>   
+                </div><!--progressbar-->
+              </div><!--quts-info-->
+            </div><!--quts-list-->
+            
+          </div>
+        </div><!--award-bxes-->
+      </div><!--award-list-->
+
+      <div class="award-list w-100 float-start">
+        <div class="award-bxes w-100 float-start">
+          <div class="award-tilte w-100 float-start">
+            <h3>Stress Free Streaks </h3>
+            
+          </div><!--award-title-->
+
+          <div class="award-listing  w-100 float-start">
+            <div class="quts-list w-100 float-start"  *ngFor="let streak of streaktData">
+              <div class="level-icns d-inline-block position-relative">
+                <div class="level-img w-100 float-start position-relative">
+                  <img src="assets/images/level.png" alt="">
+                </div><!--level-img-->
+                <div class="level-text w-100 float-start">
+                  <p>{{streak.level}}</p>
+                </div><!--level-text-->
+              </div><!--level-icns-->
+
+              <div class="quts-info w-100 float-start">
+                <div class="quts-info-title w-100 float-start">
+                  <h4>{{streak.title}}</h4>
+                  <p>{{streak.ranking}}</p> 
+                </div><!--quts-info-title-->
+
+
+                <div class="progressbar w-100 float-start">
+                  <div class="progress position-relative">
+                    <div class="progress-done" data-done="45" style="opacity: 1; width: 0%;"></div>
+                  </div>
+                  <div class="title-prgs w-100 float-start">
+                    <p>{{streak.earn}}</p>
+                  </div>   
+                </div><!--progressbar-->
+              </div><!--quts-info-->
+            </div><!--quts-list-->
+            
+          </div>
+        </div><!--award-bxes-->
+      </div><!--award-list-->
+      
+      <div class="award-list w-100 float-start">
+        <div class="award-bxes w-100 float-start">
+          <div class="award-tilte w-100 float-start">
+            <h3>Treasure Collection</h3>
+            
+          </div><!--award-title-->
+
+          <div class="award-listing  w-100 float-start">
+            <div class="quts-list w-100 float-start"  *ngFor="let treasure of treasuretData">
+              <div class="level-icns d-inline-block position-relative">
+                <div class="level-img w-100 float-start position-relative">
+                  <img src="assets/images/level.png" alt="">
+                </div><!--level-img-->
+                <div class="level-text w-100 float-start">
+                  <p>{{treasure.level}}</p>
+                </div><!--level-text-->
+              </div><!--level-icns-->
+
+              <div class="quts-info w-100 float-start">
+                <div class="quts-info-title w-100 float-start">
+                  <h4>{{treasure.title}}</h4>
+                  <p>{{treasure.ranking}}</p> 
+                </div><!--quts-info-title-->
+
+
+                <div class="progressbar w-100 float-start">
+                  <div class="progress position-relative">
+                    <div class="progress-done" data-done="45" style="opacity: 1; width: 0%;"></div>
+                  </div>
+                  <div class="title-prgs w-100 float-start">
+                    <p>{{treasure.earn}}</p>
+                  </div>   
+                </div><!--progressbar-->
+              </div><!--quts-info-->
+            </div><!--quts-list-->
+            
+          </div>
+        </div><!--award-bxes-->
+      </div><!--award-list-->
+      
+    </div><!--main-award-->
+
+  </div><!--explore-data-->
